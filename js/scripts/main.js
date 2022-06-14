@@ -102,5 +102,12 @@ var slide_hero = new Swiper(".slide-principal", {
     });
   });
 
+const btnMobile = document.querySelector('.btn-mobile');
+
+btnMobile.addEventListener('click', () => {
+  btnMobile.classList.toggle('active');
+
+
+})
 
 
