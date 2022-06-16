@@ -1,3 +1,5 @@
+// Slide e Slide Thumbnail
+
 var slide_thumbnail = new Swiper(".slide-thumbnail", {
   slidesPerView: 5,
   direction: 'vertical',
@@ -42,6 +44,8 @@ var slide_hero = new Swiper(".slide-principal", {
     }
   });
 
+  // Filtro Jogos
+
   const allFilters = document.querySelectorAll('.js-nav-games li a');
   const tabPane = document.querySelectorAll('.tab-pane-games');
 
@@ -62,6 +66,8 @@ var slide_hero = new Swiper(".slide-principal", {
     })
   });
 
+  // Modal Login
+  
   const btnOpenModal = document.querySelector('.js-open-modal');
   const btnCloseModal = document.querySelector('.js-close');
   
@@ -75,6 +81,8 @@ var slide_hero = new Swiper(".slide-principal", {
     let tagHtml = document.documentElement;
     tagHtml.classList.remove('show-modal');
   });
+
+  // Accordion Menu
 
   const btnMenu = document.querySelectorAll('.js-btn-menu');
   const menuSite = document.querySelectorAll('.js-menu');
@@ -102,12 +110,41 @@ var slide_hero = new Swiper(".slide-principal", {
     });
   });
 
+  // Open/Close Menu Mobile
+  
 const btnMobile = document.querySelector('.btn-mobile');
 
-btnMobile.addEventListener('click', () => {
+function openMenuMobile() {
+  document.documentElement.classList.toggle('menu-mobile-open');
   btnMobile.classList.toggle('active');
+};
+btnMobile.addEventListener('click', openMenuMobile);
+
+//Accordion Menu Mobile
+
+const tabJogos = document.getElementById('jogos');
+const listJogos = document.getElementById('lista-jogos');
+const tabEsportes = document.getElementById('esportes');
+const listEsportes = document.getElementById('lista-esportes');
+
+tabJogos.addEventListener('click', (event) => {
+  event.preventDefault();
+  toggleClassJogos();
+});
+
+tabEsportes.addEventListener('click', (event) => {
+  event.preventDefault();
+  toggleClassEsportes();
+});
+
+function toggleClassJogos() {
+  listJogos.classList.toggle('active');
+};
+
+function toggleClassEsportes() {
+  listEsportes.classList.toggle('active');
+};
 
 
-})
 
 
